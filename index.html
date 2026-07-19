@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tell us about your property and receive a no-obligation home selling consultation." />
+  <title>Sell Your Home | Jarrell's Investments</title>
+  <style>
+
+    :root {
+      --gold: #ffd700;
+      --gold-deep: #c9a227;
+      --gold-soft: #e6c200;
+      --black: #050505;
+      --surface: #111111;
+      --surface-raised: #171717;
+      --text: #f5f5f5;
+      --muted: #c5c5c5;
+      --border: rgba(255, 215, 0, 0.24);
+      --success: #ffd700;
+      --shadow: 0 18px 55px rgba(255, 215, 0, 0.11);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ::selection {
+      color: var(--black);
+      background: var(--gold);
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--gold);
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+      color: var(--black);
+      font-size: 1.25rem;
+      box-shadow: 0 8px 22px rgba(255, 215, 0, 0.22);
+    }
+
+    .nav-button,
+    .primary-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+      color: var(--black);
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .nav-button {
+      min-height: 42px;
+      padding: 0 18px;
+    }
+
+    .nav-button:hover,
+    .primary-button:hover {
+      background: var(--gold);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(255, 215, 0, 0.2);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 86px 0 74px;
+      background:
+        radial-gradient(circle at 12% 15%, rgba(255, 215, 0, 0.16), transparent 28%),
+        radial-gradient(circle at 88% 22%, rgba(201, 162, 39, 0.12), transparent 30%),
+        linear-gradient(180deg, #030303 0%, #0b0b0b 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      border-radius: 99px;
+      background: var(--gold);
+    }
+
+    h1 {
+      max-width: 700px;
+      color: var(--gold);
+      font-size: clamp(2.45rem, 5vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      margin-bottom: 22px;
+    }
+
+    .hero-copy > p {
+      max-width: 620px;
+      font-size: 1.14rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .benefits {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 650;
+      color: var(--text);
+    }
+
+    .check {
+      width: 27px;
+      height: 27px;
+      flex: 0 0 27px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 215, 0, 0.12);
+      color: var(--gold);
+      font-weight: 900;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .trust-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .form-card {
+      background: var(--surface-raised);
+      padding: 30px;
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-card h2 {
+      color: var(--gold);
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .form-card .intro {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    form {
+      display: grid;
+      gap: 17px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 750;
+      color: var(--text);
+      margin-bottom: 7px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 13px 14px;
+      font: inherit;
+      color: var(--text);
+      background: #0c0c0c;
+      outline: none;
+      transition: 0.2s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #888888;
+    }
+
+    select option {
+      color: var(--text);
+      background: #111111;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.12);
+    }
+
+    textarea {
+      min-height: 108px;
+      resize: vertical;
+    }
+
+    .primary-button {
+      width: 100%;
+      min-height: 52px;
+      padding: 0 22px;
+      font-size: 1rem;
+    }
+
+    .fine-print {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-align: center;
+      line-height: 1.45;
+    }
+
+    .investor-notice {
+      display: none;
+      padding: 18px;
+      border: 1px solid rgba(255, 215, 0, 0.5);
+      border-radius: 12px;
+      background: rgba(255, 215, 0, 0.08);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.08);
+    }
+
+    .investor-notice.visible {
+      display: block;
+      animation: noticeReveal 0.22s ease-out;
+    }
+
+    .investor-notice h3 {
+      color: var(--gold);
+      margin-bottom: 7px;
+      font-size: 1.05rem;
+    }
+
+    .investor-notice p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 14px;
+    }
+
+    @keyframes noticeReveal {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .checkbox-label input {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 19px;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+
+    .success-message {
+      display: none;
+      padding: 14px;
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      border-radius: 10px;
+      background: rgba(255, 215, 0, 0.1);
+      color: var(--gold);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .section {
+      padding: 78px 0;
+      background: #0b0b0b;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 44px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      color: var(--gold);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      color: var(--black);
+      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+      font-weight: 850;
+    }
+
+    .step h3 {
+      color: var(--gold);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--muted);
+    }
+
+    .why {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.08), transparent 35%),
+        #080808;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .why-card {
+      padding: 28px;
+      border-radius: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .why-card h3 {
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .why-card p {
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 30px 0;
+      background: #020202;
+      color: #d8d8d8;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .legal-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .legal-link {
+      color: var(--gold);
+      cursor: pointer;
+      background: none;
+      border: 0;
+      padding: 0;
+      font: inherit;
+      font-weight: 700;
+    }
+
+    .legal-link:hover {
+      text-decoration: underline;
+    }
+
+    .legal-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.86);
+      backdrop-filter: blur(5px);
+    }
+
+    .legal-modal.open {
+      display: grid;
+    }
+
+    .legal-panel {
+      width: min(900px, 100%);
+      max-height: min(86vh, 900px);
+      overflow-y: auto;
+      background: #111111;
+      border: 1px solid rgba(255, 215, 0, 0.38);
+      border-radius: 16px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
+    }
+
+    .legal-header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 24px;
+      background: rgba(17, 17, 17, 0.97);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legal-header h2 {
+      color: var(--gold);
+      line-height: 1.2;
+    }
+
+    .legal-close {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: #080808;
+      color: var(--gold);
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    .legal-content {
+      padding: 26px 24px 32px;
+      color: var(--muted);
+    }
+
+    .legal-content h3 {
+      color: var(--gold);
+      margin: 24px 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .legal-content h3:first-of-type {
+      margin-top: 18px;
+    }
+
+    .legal-content p,
+    .legal-content li {
+      font-size: 0.94rem;
+    }
+
+    .legal-content ul {
+      margin: 8px 0 0 22px;
+    }
+
+    .legal-content li + li {
+      margin-top: 6px;
+    }
+
+    .legal-effective {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .legal-placeholder {
+      margin-top: 22px;
+      padding: 14px;
+      border: 1px dashed rgba(255, 215, 0, 0.45);
+      border-radius: 10px;
+      color: var(--gold);
+      background: rgba(255, 215, 0, 0.05);
+      font-size: 0.88rem;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 42px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 26px, 1120px);
+      }
+
+      .nav {
+        min-height: 64px;
+      }
+
+      .brand span:last-child {
+        font-size: 1rem;
+      }
+
+      .nav-button {
+        padding: 0 13px;
+        font-size: 0.86rem;
+      }
+
+      .form-card {
+        padding: 22px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="brand-mark">⌂</span>
+        <span>Jarrell's Investments</span>
+      </a>
+      <a class="nav-button" href="#property-form">Tell Us About Your Home</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">A simpler way to sell</div>
+          <h1>Thinking about selling your home?</h1>
+          <p>
+            Tell us a little about your property and situation. We will review the
+            details and contact you to discuss the next best step—without pressure
+            or obligation.
+          </p>
+
+          <div class="benefits">
+            <div class="benefit"><span class="check">✓</span> Fast, simple property submission</div>
+            <div class="benefit"><span class="check">✓</span> No-obligation consultation</div>
+            <div class="benefit"><span class="check">✓</span> Sell on a timeline that works for you</div>
+          </div>
+
+          <div class="trust-note">
+            Your information stays private and is only used to contact you about your property.
+          </div>
+        </div>
+
+        <div class="form-card" id="property-form">
+          <h2>Tell us about your property</h2>
+          <p class="intro">Complete the form below and we will be in touch.</p>
+
+          <form id="sellerForm">
+            <div class="form-row">
+              <div>
+                <label for="firstName">First name</label>
+                <input id="firstName" name="firstName" type="text" placeholder="John" required />
+              </div>
+              <div>
+                <label for="lastName">Last name</label>
+                <input id="lastName" name="lastName" type="text" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" required />
+              </div>
+              <div>
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" placeholder="john@example.com" required />
+              </div>
+            </div>
+
+            <div>
+              <label for="address">Property address</label>
+              <input id="address" name="address" type="text" placeholder="123 Main Street, City, State, ZIP" required />
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="bedrooms">Bedrooms</label>
+                <select id="bedrooms" name="bedrooms" required>
+                  <option value="">Select</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5+</option>
+                </select>
+              </div>
+              <div>
+                <label for="bathrooms">Bathrooms</label>
+                <select id="bathrooms" name="bathrooms" required>
+                  <option value="">Select</option>
+                  <option>1</option>
+                  <option>1.5</option>
+                  <option>2</option>
+                  <option>2.5</option>
+                  <option>3</option>
+                  <option>4+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="propertyType">Property type</label>
+                <select id="propertyType" name="propertyType" required>
+                  <option value="">Select</option>
+                  <option>Single-family home</option>
+                  <option>Townhouse</option>
+                  <option>Condo</option>
+                  <option>Duplex / Multi-family</option>
+                  <option>Mobile home</option>
+                  <option>Land</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="timeline">How long until you want to sell?</label>
+                <select id="timeline" name="timeline" required>
+                  <option value="">Select</option>
+                  <option value="under-30">As soon as possible / Under 30 days</option>
+                  <option value="30-60">30–60 days</option>
+                  <option value="60-90">60–90 days</option>
+                  <option value="90-plus">90+ days</option>
+                  <option value="exploring">Just exploring options</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="condition">Property condition</label>
+              <select id="condition" name="condition" required>
+                <option value="">Select</option>
+                <option>Move-in ready</option>
+                <option>Needs minor repairs</option>
+                <option>Needs major repairs</option>
+                <option>Vacant</option>
+                <option>Tenant occupied</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="improvements">Changes or improvements made since purchase</label>
+              <textarea
+                id="improvements"
+                name="improvements"
+                placeholder="List anything added, replaced, repaired, remodeled, or improved since you purchased the property. Examples: shed, rock pathway, new roof, updated kitchen, flooring, fencing, deck, plumbing, electrical work, landscaping, or additions."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="purchaseCondition">How was the property when you purchased it?</label>
+              <select id="purchaseCondition" name="purchaseCondition">
+                <option value="">Select</option>
+                <option>Purchased as-is</option>
+                <option>Move-in ready</option>
+                <option>Needed minor repairs</option>
+                <option>Needed major repairs</option>
+                <option>New construction</option>
+                <option>Inherited or transferred</option>
+                <option>Not sure / Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="details">Anything else we should know?</label>
+              <textarea
+                id="details"
+                name="details"
+                placeholder="Repairs still needed, reason for selling, mortgage balance, asking price, occupancy status, or any other useful information..."
+              ></textarea>
+            </div>
+            <div class="investor-notice" id="investorNotice" aria-live="polite">
+              <h3>Important: You are contacting investors</h3>
+              <p>
+                Because you selected a selling timeline of under 30 days, your property
+                information will be reviewed by real estate investors—not traditional
+                retail home buyers. Investment offers may be based on the property's
+                condition, repair needs, resale value, and the speed of the sale.
+              </p>
+              <label class="checkbox-label" for="investorAcknowledgment">
+                <input
+                  id="investorAcknowledgment"
+                  name="investorAcknowledgment"
+                  type="checkbox"
+                />
+                <span>
+                  I understand that Jarrell's Investments is a real estate investment
+                  company and that I am contacting investors, not traditional buyers.
+                </span>
+              </label>
+            </div>
+
+            <button class="primary-button" type="submit">Submit My Property</button>
+
+            <div class="success-message" id="successMessage">
+              Thank you! Your property information has been submitted.
+            </div>
+
+            <p class="fine-print">
+              By submitting this form, you agree to be contacted by phone, text, or email
+              regarding your property and acknowledge our
+              <button class="legal-link" type="button" data-open-legal="termsModal">Terms &amp; Conditions</button>
+              and
+              <button class="legal-link" type="button" data-open-legal="privacyModal">Privacy Policy</button>.
+              Jarrell's Investments is acting as a real estate investor, not as your real estate
+              agent, broker, or guaranteed buyer. This is not a binding agreement or guaranteed offer.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>How it works</h2>
+          <p>A straightforward process designed to make selling less complicated.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">1</div>
+            <h3>Share your property details</h3>
+            <p>Tell us where the property is located, its size, condition, and your preferred timeline.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">2</div>
+            <h3>We review the information</h3>
+            <p>Our team looks over your submission and may contact you with a few additional questions.</p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">3</div>
+            <h3>Discuss your options</h3>
+            <p>We explain the next steps and help you decide whether moving forward makes sense for you.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Why homeowners contact us</h2>
+          <p>Every selling situation is different. We keep the conversation simple and respectful.</p>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-card">
+            <h3>Flexible timelines</h3>
+            <p>Whether you need to move quickly or are only researching your options, start when you are ready.</p>
+          </article>
+
+          <article class="why-card">
+            <h3>Properties in any condition</h3>
+            <p>You can submit homes that are updated, outdated, inherited, vacant, occupied, or in need of repairs.</p>
+          </article>
+
+          <article class="why-card">
+            <h3>No-pressure conversation</h3>
+            <p>Submitting the form does not obligate you to sell or accept any proposed terms.</p>
+          </article>
+
+          <article class="why-card">
+            <h3>Clear communication</h3>
+            <p>We keep you informed about what happens next and answer your questions along the way.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Jarrell's Investments. All rights reserved.</div>
+      <div class="legal-links">
+        <button class="legal-link" type="button" data-open-legal="privacyModal">Privacy Policy</button>
+        <button class="legal-link" type="button" data-open-legal="termsModal">Terms &amp; Conditions</button>
+      </div>
+    </div>
+  </footer>
+
+
+  <div class="legal-modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+    <div class="legal-panel">
+      <div class="legal-header">
+        <h2 id="privacyTitle">Privacy Policy</h2>
+        <button class="legal-close" type="button" aria-label="Close privacy policy" data-close-legal>&times;</button>
+      </div>
+      <div class="legal-content">
+        <p class="legal-effective">Effective date: July 17, 2026</p>
+        <p>
+          This Privacy Policy explains how Jarrell's Investments (“we,” “us,” or “our”)
+          collects, uses, shares, and safeguards information submitted through this website.
+          By using the website or submitting property information, you acknowledge the
+          practices described in this Policy.
+        </p>
+
+        <h3>1. Information We Collect</h3>
+        <ul>
+          <li>Contact information, including your name, phone number, and email address.</li>
+          <li>Property information, including the address, property type, bedrooms, bathrooms, condition, occupancy, improvements, repairs, and desired selling timeline.</li>
+          <li>Transaction-related information you voluntarily provide, such as an asking price, estimated mortgage balance, reason for selling, or other property details.</li>
+          <li>Communication records, including notes, calls, text messages, emails, appointments, and follow-up history.</li>
+          <li>Basic technical information automatically provided by your browser or hosting provider, such as IP address, browser type, device type, and submission time.</li>
+        </ul>
+
+        <h3>2. How We Use Information</h3>
+        <ul>
+          <li>Review your property and determine whether it may fit our investment criteria.</li>
+          <li>Contact you about the property by telephone, text message, or email.</li>
+          <li>Schedule property visits, request additional information, and discuss possible transaction terms.</li>
+          <li>Create and manage a lead record in our customer relationship management system.</li>
+          <li>Evaluate market conditions, repair needs, resale potential, and possible investment value.</li>
+          <li>Prevent fraud, protect the website, maintain records, and comply with legal obligations.</li>
+        </ul>
+
+        <h3>3. CRM and Service Providers</h3>
+        <p>
+          Submitted information may be transmitted to and stored in REsimpli or another
+          customer relationship management platform used by Jarrell's Investments. We may
+          also use website hosts, form processors, communications providers, mapping or
+          property-data services, contractors, and professional advisers as needed to
+          operate the business. These providers may process information only for the
+          services they perform for us.
+        </p>
+
+        <h3>4. Sharing of Information</h3>
+        <p>
+          We do not sell your personal information as a standalone product. We may share
+          relevant information with employees, contractors, funding partners, title
+          companies, attorneys, inspectors, appraisers, lenders, potential assignees,
+          purchasers, or other transaction participants when reasonably necessary to
+          evaluate or complete a possible real estate transaction. We may also disclose
+          information when required by law or to protect legal rights and safety.
+        </p>
+
+        <h3>5. Communications and Consent</h3>
+        <p>
+          By submitting the form, you authorize Jarrell's Investments and its authorized
+          representatives to contact you regarding the submitted property using the phone
+          number or email address you provided. Message and data rates may apply. Consent
+          to receive communications does not require you to accept an offer or complete a
+          transaction. You may request that non-essential communications stop at any time.
+        </p>
+
+        <h3>6. Cookies and Tracking</h3>
+        <p>
+          The current landing page does not intentionally use advertising cookies or
+          behavioral advertising pixels. Hosting providers or integrated services may use
+          necessary technical cookies or logs for security and operation. If analytics,
+          advertising, or additional tracking tools are added, this Policy should be
+          updated accordingly.
+        </p>
+
+        <h3>7. Data Retention</h3>
+        <p>
+          We retain lead and communication records for as long as reasonably necessary to
+          evaluate opportunities, maintain business records, resolve disputes, enforce
+          agreements, and comply with tax or legal obligations. Information that is no
+          longer required may be deleted or anonymized.
+        </p>
+
+        <h3>8. Security</h3>
+        <p>
+          We use reasonable administrative and technical safeguards intended to protect
+          submitted information. No website, transmission method, or storage system is
+          completely secure. Do not submit Social Security numbers, banking credentials,
+          passwords, or other highly sensitive information through the property form.
+        </p>
+
+        <h3>9. Your Choices</h3>
+        <p>
+          You may request access to, correction of, or deletion of personal information we
+          maintain, subject to records we are legally permitted or required to retain. You
+          may also request that we stop non-essential marketing communications.
+        </p>
+
+        <h3>10. Children's Privacy</h3>
+        <p>
+          This website is intended for adults and is not directed to children under 13.
+          We do not knowingly collect personal information from children.
+        </p>
+
+        <h3>11. Changes to This Policy</h3>
+        <p>
+          We may update this Privacy Policy as our website, CRM, business practices, or
+          legal obligations change. The effective date above identifies the latest revision.
+        </p>
+
+        <h3>12. Contact</h3>
+        <p>
+          Questions or privacy requests should be directed to Jarrell's Investments using
+          the business contact information published on this website.
+        </p>
+
+        <div class="legal-placeholder">
+          Before publishing: replace this contact section with the company's real business
+          email, telephone number, mailing address, and correct legal business structure.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legal-modal" id="termsModal" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+    <div class="legal-panel">
+      <div class="legal-header">
+        <h2 id="termsTitle">Terms &amp; Conditions</h2>
+        <button class="legal-close" type="button" aria-label="Close terms and conditions" data-close-legal>&times;</button>
+      </div>
+      <div class="legal-content">
+        <p class="legal-effective">Effective date: July 17, 2026</p>
+        <p>
+          These Terms &amp; Conditions (“Terms”) govern your use of this website and any
+          property information, inquiry, or communication submitted to Jarrell's
+          Investments (“we,” “us,” or “our”). By using the website or submitting the form,
+          you acknowledge that you have read and agree to these Terms.
+        </p>
+
+        <h3>1. Purpose of the Website</h3>
+        <p>
+          This website allows property owners or authorized representatives to submit
+          information for evaluation by a real estate investment company. Submission does
+          not create a purchase agreement, agency relationship, fiduciary duty, listing
+          agreement, brokerage relationship, or obligation for either party to proceed.
+        </p>
+
+        <h3>2. Investor Disclosure</h3>
+        <p>
+          Jarrell's Investments evaluates properties for investment purposes. We are not
+          acting as your real estate agent, broker, attorney, appraiser, lender, or financial
+          adviser unless a separate written agreement expressly states otherwise. Any
+          possible offer may reflect repair costs, holding costs, transaction expenses,
+          resale risk, desired profit, market conditions, and the convenience or speed of
+          the proposed transaction. An investment offer may be lower than a price obtainable
+          through a traditional retail listing.
+        </p>
+
+        <h3>3. No Guaranteed Offer or Purchase</h3>
+        <p>
+          Completing the form does not guarantee that you will receive an offer or that we
+          will purchase the property. Any preliminary discussion, estimate, valuation, or
+          verbal indication is non-binding. A transaction exists only after all required
+          parties sign a definitive written agreement.
+        </p>
+
+        <h3>4. Your Representations</h3>
+        <p>By submitting property information, you represent that:</p>
+        <ul>
+          <li>You are at least 18 years old.</li>
+          <li>You own the property or are authorized to provide information and communicate on the owner's behalf.</li>
+          <li>The information you submit is accurate to the best of your knowledge.</li>
+          <li>You will disclose known material defects, liens, ownership disputes, occupancy issues, and other facts relevant to a potential transaction.</li>
+          <li>You will not use the website for unlawful, fraudulent, abusive, or misleading purposes.</li>
+        </ul>
+
+        <h3>5. Property Information and Due Diligence</h3>
+        <p>
+          We may verify submitted information through public records, property-data
+          services, inspections, photographs, contractors, title research, comparable
+          sales, or other lawful sources. Any offer or proposed terms may change or be
+          withdrawn based on due diligence, title issues, property condition, access,
+          financing, market changes, or inaccurate or incomplete information.
+        </p>
+
+        <h3>6. Communications</h3>
+        <p>
+          By submitting the form, you request contact regarding the property and authorize
+          communications by phone, text message, or email using the information provided.
+          Message and data rates may apply. You may request that non-essential
+          communications stop, but transaction-related communications may continue where
+          appropriate.
+        </p>
+
+        <h3>7. Third-Party Systems and Services</h3>
+        <p>
+          We may use REsimpli or another CRM, hosting providers, communications platforms,
+          property-data providers, title companies, contractors, attorneys, lenders, and
+          other third parties to evaluate or facilitate a potential transaction. Your use
+          of third-party services may also be subject to their own terms and privacy policies.
+        </p>
+
+        <h3>8. No Professional Advice</h3>
+        <p>
+          Website content and communications are general business information, not legal,
+          tax, financial, appraisal, or real estate brokerage advice. You should consult
+          independent licensed professionals before making decisions about selling,
+          financing, taxes, title, inheritance, foreclosure, bankruptcy, or contractual rights.
+        </p>
+
+        <h3>9. Website Availability and Accuracy</h3>
+        <p>
+          We may modify, suspend, or discontinue the website at any time. We do not
+          guarantee uninterrupted operation or that all website information is complete,
+          current, or error-free.
+        </p>
+
+        <h3>10. Limitation of Liability</h3>
+        <p>
+          To the fullest extent permitted by law, Jarrell's Investments and its owners,
+          employees, contractors, and representatives are not liable for indirect,
+          incidental, special, consequential, exemplary, or punitive damages arising from
+          use of the website, reliance on preliminary information, inability to submit a
+          form, or a decision not to pursue a transaction. This limitation does not exclude
+          liability that cannot legally be limited.
+        </p>
+
+        <h3>11. Indemnification</h3>
+        <p>
+          You agree to indemnify and hold harmless Jarrell's Investments and its
+          representatives from claims, losses, or expenses arising from fraudulent or
+          unauthorized submissions, your violation of these Terms, or your infringement of
+          another person's rights, except to the extent caused by our gross negligence or
+          willful misconduct.
+        </p>
+
+        <h3>12. Governing Law</h3>
+        <p>
+          These Terms are governed by the laws of the Commonwealth of Pennsylvania, without
+          regard to conflict-of-law principles. The appropriate county and court for any
+          dispute should be identified based on the company's actual principal place of
+          business and reviewed by a Pennsylvania attorney.
+        </p>
+
+        <h3>13. Severability and Entire Agreement</h3>
+        <p>
+          If any provision is found unenforceable, the remaining provisions remain in
+          effect. These website Terms, together with the Privacy Policy and any later signed
+          written agreement, constitute the applicable agreement concerning use of this website.
+        </p>
+
+        <h3>14. Changes to These Terms</h3>
+        <p>
+          We may revise these Terms from time to time. The effective date above reflects
+          the latest revision. Continued use of the website after an update constitutes
+          acceptance of the revised Terms.
+        </p>
+
+        <h3>15. Contact</h3>
+        <p>
+          Questions about these Terms should be directed to Jarrell's Investments using the
+          business contact information published on this website.
+        </p>
+
+        <div class="legal-placeholder">
+          These terms are a tailored working draft, not legal advice. Before launch, add the
+          company's legal entity, real address, email, telephone number, operating county,
+          and have a Pennsylvania real-estate attorney review the investor, texting,
+          assignment, disclosure, and dispute provisions.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const sellerForm = document.getElementById("sellerForm");
+    const timeline = document.getElementById("timeline");
+    const investorNotice = document.getElementById("investorNotice");
+    const investorAcknowledgment = document.getElementById("investorAcknowledgment");
+    const submitButton = sellerForm.querySelector('button[type="submit"]');
+    const successMessage = document.getElementById("successMessage");
+
+    function updateInvestorNotice() {
+      const needsInvestorNotice = timeline.value === "under-30";
+
+      investorNotice.classList.toggle("visible", needsInvestorNotice);
+      investorAcknowledgment.required = needsInvestorNotice;
+
+      if (!needsInvestorNotice) {
+        investorAcknowledgment.checked = false;
+      }
+    }
+
+    timeline.addEventListener("change", updateInvestorNotice);
+    updateInvestorNotice();
+
+    const legalModals = document.querySelectorAll(".legal-modal");
+    const legalOpenButtons = document.querySelectorAll("[data-open-legal]");
+    const legalCloseButtons = document.querySelectorAll("[data-close-legal]");
+
+    function closeLegalModal(modal) {
+      modal.classList.remove("open");
+      document.body.classList.remove("modal-open");
+    }
+
+    legalOpenButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const modal = document.getElementById(button.dataset.openLegal);
+        modal.classList.add("open");
+        document.body.classList.add("modal-open");
+        modal.querySelector(".legal-close").focus();
+      });
+    });
+
+    legalCloseButtons.forEach((button) => {
+      button.addEventListener("click", () => closeLegalModal(button.closest(".legal-modal")));
+    });
+
+    legalModals.forEach((modal) => {
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) closeLegalModal(modal);
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        const openModal = document.querySelector(".legal-modal.open");
+        if (openModal) closeLegalModal(openModal);
+      }
+    });
+
+    sellerForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      if (!sellerForm.checkValidity()) {
+        sellerForm.reportValidity();
+        return;
+      }
+
+      const originalButtonText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+      successMessage.style.display = "none";
+
+      const formData = Object.fromEntries(new FormData(sellerForm).entries());
+      formData.submittedAt = new Date().toISOString();
+      formData.source = "Jarrell's Investments website";
+
+      try {
+        const response = await fetch(
+          "https://jarrell-resimpli-form.cipherlogsplus.workers.dev",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+          }
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Submission failed");
+        }
+
+        successMessage.style.display = "block";
+        submitButton.textContent = "Submitted";
+        sellerForm.reset();
+        updateInvestorNotice();
+
+        console.log("Cloudflare Worker response:", result);
+      } catch (error) {
+        console.error("Submission error:", error);
+        alert("The form could not be submitted. Please try again.");
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    });
+  </script>
+</body>
+</html>
